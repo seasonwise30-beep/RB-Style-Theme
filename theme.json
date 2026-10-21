@@ -1,0 +1,7 @@
+{
+  "id": "rb-style",
+  "name": "RB Style",
+  "version": "1.0.0",
+  "description": "Dark navy and electric blue visual theme for Pterodactyl Panel 1.x",
+  "panel_compatibility": "Pterodactyl Panel 1.x"
+}

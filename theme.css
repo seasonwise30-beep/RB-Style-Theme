@@ -1,0 +1,150 @@
+/*
+ * RB Style — CSS-only visual layer for Pterodactyl Panel 1.x
+ * This changes appearance only. It does not create new dashboard data or features.
+ */
+
+:root {
+  color-scheme: dark;
+  --rb-bg: #060d1a;
+  --rb-panel: #0b1628;
+  --rb-card: #0e1c31;
+  --rb-card-hover: #12243d;
+  --rb-border: #203754;
+  --rb-blue: #168bff;
+  --rb-cyan: #21d4fd;
+  --rb-text: #eaf3ff;
+  --rb-muted: #8fa7c5;
+  --rb-radius: 12px;
+}
+
+/* Page background and default text */
+html, body {
+  background: var(--rb-bg) !important;
+  color: var(--rb-text);
+}
+body {
+  background-image:
+    radial-gradient(ellipse at 75% 0%, rgba(22,139,255,.12), transparent 42%),
+    linear-gradient(180deg, #071225 0%, var(--rb-bg) 60%);
+  background-attachment: fixed;
+}
+
+/* Navigation and common dark surfaces */
+nav, header, aside,
+[class*="Navigation"],
+[class*="Sidebar"],
+[class*="sidebar"] {
+  border-color: var(--rb-border) !important;
+}
+nav, aside {
+  background-color: rgba(7, 18, 35, .96) !important;
+}
+a {
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+}
+a:hover {
+  color: var(--rb-cyan);
+}
+
+/* Common card, panel, and container surfaces */
+[class*="ContentBox"],
+[class*="content-box"],
+[class*="ServerRow"],
+[class*="server-row"],
+[class*="Box"],
+[class*="box"],
+[class*="Card"],
+[class*="card"] {
+  border-color: var(--rb-border) !important;
+  border-radius: var(--rb-radius) !important;
+}
+.bg-neutral-800, .bg-neutral-900, .bg-gray-800, .bg-gray-900,
+.bg-black, [class*="bg-neutral-"], [class*="bg-gray-"] {
+  background-color: var(--rb-panel) !important;
+}
+.border-neutral-700, .border-neutral-800, .border-gray-700,
+[class*="border-neutral-"], [class*="border-gray-"] {
+  border-color: var(--rb-border) !important;
+}
+
+/* Inputs */
+input, textarea, select,
+[class*="Input_input"],
+[class*="input"] {
+  color: var(--rb-text);
+}
+input, textarea, select {
+  background-color: #081426 !important;
+  border-color: var(--rb-border) !important;
+  border-radius: 8px !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--rb-blue) !important;
+  box-shadow: 0 0 0 2px rgba(22,139,255,.18) !important;
+  outline: none;
+}
+
+/* Buttons */
+button, [role="button"], .btn {
+  border-radius: 8px;
+  transition: filter .15s ease, transform .15s ease;
+}
+button:hover, [role="button"]:hover, .btn:hover {
+  filter: brightness(1.12);
+}
+button[type="submit"], .btn-primary,
+[class*="Button_primary"], [class*="button-primary"] {
+  background: linear-gradient(110deg, var(--rb-blue), #0862d7) !important;
+  border-color: #238eff !important;
+  color: #fff !important;
+}
+
+/* Tables */
+table {
+  border-color: var(--rb-border) !important;
+}
+thead, th {
+  background: #0c1a2d !important;
+  color: #bcd2ef;
+}
+td, th {
+  border-color: var(--rb-border) !important;
+}
+tbody tr:hover {
+  background-color: rgba(22,139,255,.07) !important;
+}
+
+/* Status badges and links */
+.text-primary-500, .text-blue-400, .text-blue-500 {
+  color: var(--rb-cyan) !important;
+}
+.bg-primary-500, .bg-blue-500, .bg-blue-600 {
+  background-color: var(--rb-blue) !important;
+}
+
+/* Console */
+.terminal, [class*="Terminal"], [class*="terminal"] {
+  border: 1px solid var(--rb-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Scrollbars (supported browsers) */
+* {
+  scrollbar-color: #29476b #071225;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: #071225; }
+::-webkit-scrollbar-thumb {
+  background: #29476b;
+  border-radius: 8px;
+  border: 2px solid #071225;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  body { background-attachment: scroll; }
+  button, [role="button"], input, select { max-width: 100%; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+}
